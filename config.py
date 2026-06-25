@@ -20,9 +20,6 @@ class Settings(BaseSettings):
     sql_allowlist_mode: Literal["read_only", "dml"] = Field(
         default="read_only", alias="SQL_ALLOWLIST_MODE"
     )
-    chart_backend: Literal["plotly", "matplotlib"] = Field(
-        default="plotly", alias="CHART_BACKEND"
-    )
 
     @field_validator("db_connections", mode="before")
     @classmethod
