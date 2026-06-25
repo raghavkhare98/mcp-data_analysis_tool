@@ -13,7 +13,7 @@ class Settings(BaseSettings):
     staging_dir: Path = Field(default=Path("./staging"), alias="STAGING_DIR")
     db_connections: dict[str, str] = Field(default_factory=dict, alias="DB_CONNECTIONS")
     max_result_rows: int = Field(default=1000, gt=0, le=100000,alias="MAX_RESULT_ROWS")
-    max_file_size_mb: int = Field(default=100, gt=0, le=10240,alias="MAX_FILE_SIZE_MB")
+    max_file_size_mb: int = Field(default=100, gt=0, le=1024,alias="MAX_FILE_SIZE_MB")
     mcp_api_key: SecretStr = Field(alias="MCP_API_KEY")
     host: str = Field(default="0.0.0.0", alias="HOST")
     port: int = Field(default=8000, alias="PORT")
